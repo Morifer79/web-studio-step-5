@@ -3,7 +3,9 @@
 	--primary-brand: #4D5AE5;
 	--pressed-state: #404BBF;
 	--dark: #2E2F42;
-	--dark-overlay: #2E2F42B2;
+	--dark-overlay: rgba(46, 47, 66, 0.7);
+	--modal-overlay: rgba(46, 47, 66, 0.4);
+	--modal-bcg: #FCFCFC;
 	--text: #434455;
 	--light: #F4F4FD;
 	--accent: #E7E9FC;
@@ -76,6 +78,8 @@ img{
 	margin-right: 40px;
 }
 .nav-link {
+	position: relative;
+
 	font-weight: 500;
 	text-decoration: none;
 	color: var(--dark);
@@ -86,6 +90,18 @@ img{
 }
 .current{
 	color: var(--pressed-state);
+}
+.nav-link.current::after{
+	position: absolute;
+	left: 0;
+	margin-top: 46px;
+
+	content: "";
+	width: 100%;
+	height: 4px;
+
+	background: var(--pressed-state);
+	border-radius: 2px;
 }
 /* *==============================ADDRESS================================ */
 .contact{
@@ -314,7 +330,7 @@ img{
 	margin: 16px 32px;
 	fill: var(--light-slate);
 }
-.customer-img:hover{
+.customer-link:hover .customer-img{
 	fill: var(--pressed-state);
 }
 /* ?============================PORTFOLIO================================= */
@@ -380,4 +396,43 @@ img{
 }
 .dark:hover{
 	background-color: var(--footer-hover);
+}
+/* !============================MODAL=================================== */
+.backdrop{
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+	background: var(--modal-overlay);
+}
+.backdrop.is-hidden{
+	opacity: 0;
+	pointer-events: none;
+}
+.modal{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	background: var(--modal-bcg);
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+
+	width: 408px;
+	height: 576px;
+}
+.button-close{
+	position: fixed;
+	top: 24px;
+	right: 24px;
+
+	border: none;
+	background-color: inherit;
+}
+.btn-close{
+	height: 24px;
+	width: 24px;
 }
