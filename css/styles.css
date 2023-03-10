@@ -26,15 +26,14 @@ ul{
 body{
 	font-family: Roboto, sans-serif;
 	font-size: 16px;
-	line-height: 1.5;
-	letter-spacing: 0.02em;
 	color: var(--text);
 	background-color: var(--primary-clr);
 }
 img{
+	display: block;
+
 	max-width: 100%;
 	height: auto;
-	display: block;
 }
 .container{
 	max-width: 1158px;
@@ -57,6 +56,7 @@ img{
 	font-size: 18px;
 	font-weight: 800;
 	line-height: 1.33;
+	letter-spacing: 0.03em;
 	text-decoration: none;
 	color: var(--dark);
 }
@@ -69,8 +69,8 @@ img{
 	align-items: center;
 }
 .nav-list{
-	margin-left: 76px;
 	display: flex;
+	margin-left: 76px;
 
 	list-style: none;
 }
@@ -82,6 +82,8 @@ img{
 
 	font-weight: 500;
 	text-decoration: none;
+	line-height: 1.5;
+	letter-spacing: 0.02em;
 	color: var(--dark);
 
 	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -111,16 +113,17 @@ img{
 }
 .contact-list{
 	display: flex;
-
 	list-style: none;
 }
 .contact-list .item + .item{
 	padding-left: 40px;
 }
 .contact-link{
-	color: var(--text);
 	text-decoration: none;
 	font-style: normal;
+	line-height: 1.5;
+	letter-spacing: 0.02em;
+	color: var(--text);
 
 	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -133,11 +136,11 @@ img{
 .hero {
 	padding-top: 188px;
 	padding-bottom: 186px;
-
 }
 .overlay{
 	max-width: 1440px;
 	margin: 0 auto;
+
 	background-color: var(--dark-overlay);
 	background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero.jpg);
 	background-repeat: no-repeat;
@@ -150,6 +153,7 @@ img{
 	color: var(--primary-clr);
 	font-size: 56px;
 	line-height: 1.07;
+	letter-spacing: 0.02em;
 }
 .visually-hidden{
 	position: absolute;
@@ -166,6 +170,8 @@ img{
 }
 /* ===========================ALL BUTTONS============================= */
 .button {
+	padding: 16px 32px;
+
 	font-family: 'Roboto';
 	font-weight: 500;
 	font-size: 16px;
@@ -173,8 +179,6 @@ img{
 	letter-spacing: 0.04em;
 	cursor: pointer;
 	border-radius: 4px;
-
-	padding: 16px 32px;
 }
 .button-dark {
 	background-color: var(--primary-brand);
@@ -245,6 +249,7 @@ img{
 	font-size: 20px;
 	font-weight: 500;
 	line-height: 1.2;
+	letter-spacing: 0.02em;
 	color: var(--dark);
 }
 /* =====================WORK SECTION=================== */
@@ -289,6 +294,9 @@ img{
 }
 .text-card{
 	margin-bottom: 8px;
+
+	line-height: 1.5;
+	letter-spacing: 0.02em;
 }
 .social-list{
 	display: flex;
@@ -307,7 +315,8 @@ img{
 	background-color: var(--primary-brand);
 	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.light:hover{
+.light:hover,
+.light:focus{
 	background-color: var(--pressed-state);
 }
 .social-img{
@@ -317,10 +326,10 @@ img{
 }
 /* ======================CUSTOMERS SECTION======================== */
 .customers-list{
-	list-style: none;
-
 	display: flex;
 	gap: 24px;
+
+	list-style: none;
 }
 .customer-item{
 	flex-basis: calc((100% - 120px) / 6);
@@ -335,35 +344,24 @@ img{
 
 	transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.customer-link:hover{
+.customer-link:hover,
+.customer-link:focus{
 	border: 1px solid var(--pressed-state);
 }
 .customer-img{
 	width: 104px;
 	height: 56px;
-
 	margin: 16px 32px;
+
 	fill: var(--light-slate);
 
 	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.customer-link:hover .customer-img{
+.customer-link:hover .customer-img,
+.customer-link:focus .customer-img{
 	fill: var(--pressed-state);
 }
 /* ?============================PORTFOLIO================================= */
-.portfolio-card{
-	border: 1px solid var(--accent);
-
-	flex-basis: calc((100% - 48px) / 3);
-	min-width: 350px;
-}
-.portfolio-card:hover{
-	border: 1px solid var(--light);
-	box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-}
-.portfolio-card>a{
-	text-decoration: none;
-}
 .filter-list {
 	display: flex;
 	justify-content: center;
@@ -373,6 +371,46 @@ img{
 	margin-bottom: 72px;
 
 	list-style: none;
+}
+.portfolio-card{
+	border: 1px solid var(--accent);
+	flex-basis: calc((100% - 48px) / 3);
+	min-width: 350px;
+	transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-card:hover,
+.portfolio-card:focus{
+	border: 1px solid var(--light);
+	box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+.portfolio-card:hover .thumb-overlay,
+.portfolio-card:focus .thumb-overlay{
+	transform: translateY(0);
+}
+.portfolio-card>a{
+	text-decoration: none;
+}
+.thumb{
+	position: relative;
+	overflow: hidden;
+}
+.hidden-text{
+	padding: 40px 32px 0;
+
+	line-height: 1.5;
+	color: var(--light);
+}
+.thumb-overlay{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	background-color: var(--primary-brand);
+
+	transform: translateY(100%);
+	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-list {
 	display: flex;
@@ -404,9 +442,16 @@ img{
 .social-media{
 	display: inline-block;
 }
+.footer-text{
+	line-height: 1.5;
+	letter-spacing: 0.02em;
+}
 .social-media>.footer-text{
-	font-weight: 500;
 	margin-bottom: 16px;
+
+	font-weight: 500;
+	line-height: 1.5;
+	letter-spacing: 0.02em;
 }
 .social-media>.social-list{
 	gap: 16px;
@@ -415,7 +460,8 @@ img{
 	background-color: rgba(255, 255, 255, 0.1);
 	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.dark:hover{
+.dark:hover,
+.dark:focus{
 	background-color: var(--footer-hover);
 }
 /* !============================MODAL=================================== */
@@ -423,20 +469,25 @@ img{
 	position: fixed;
 	top: 0;
 	left: 0;
-
 	width: 100%;
 	height: 100%;
-	background: var(--modal-overlay);
+	background-color: var(--modal-overlay);
+
+	transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden{
 	opacity: 0;
 	pointer-events: none;
 }
+.backdrop.is-hidden .modal{
+	transform: scale(1) translate(-50%, -50%);
+}
 .modal{
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: scale(1) translate(-50%, -50%);
+	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 	background: var(--modal-bcg);
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -463,7 +514,8 @@ img{
 	border-radius: 50%;
 	fill: black;
 }
-.button-close:hover{
+.button-close:hover,
+.button-close:focus{
 	background-color: var(--pressed-state);
 	fill: #FFFFFF;
 }
