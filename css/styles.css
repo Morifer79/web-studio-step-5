@@ -321,6 +321,11 @@ img{
 
 	border-radius: 50%;
 }
+.social-img{
+	width: 16px;
+	height: 16px;
+	margin: 12px;
+}
 .light{
 	background-color: var(--primary-brand);
 	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -328,11 +333,6 @@ img{
 .light:hover,
 .light:focus{
 	background-color: var(--pressed-state);
-}
-.social-img{
-	width: 16px;
-	height: 16px;
-	margin: 12px;
 }
 /* ======================CUSTOMERS SECTION======================== */
 .customers-list{
